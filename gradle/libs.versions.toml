@@ -1,0 +1,27 @@
+[versions]
+agp = "8.5.2"
+# Demo 是 Kotlin 写的，没有这个插件 AGP 会直接忽略 .kt（不报错、不出 dex），
+# 装到真机上才炸 ClassNotFoundException。与 AGP 8.5.2 / compileSdk 35 搭配的上限就是 1.9.x。
+kotlin = "1.9.21"
+# 这几个版本的组合是被 AGP 8.5.2 / compileSdk 35 卡住的上限：
+# 再高一档会要求 AGP >= 8.9.1 且 compileSdk >= 36，checkAarMetadata 直接判死。
+coreKtx = "1.13.1"
+# 这一条不是可选项：AAR 用 files(...) 引入时 Gradle 读不到它的依赖信息，
+# 而 SDK 的公开 API 上带着 @Nullable / @NonNull 注解，缺了这个包编译不过。
+annotation = "1.9.1"
+appcompat = "1.7.0"
+material = "1.12.0"
+activity = "1.9.3"
+recyclerview = "1.3.2"
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-annotation = { group = "androidx.annotation", name = "annotation", version.ref = "annotation" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

@@ -1,0 +1,89 @@
+<resources>
+    <string name="app_name">tVNS_SDK_Project</string>
+
+    <string name="btn_scan">扫描</string>
+    <string name="btn_stop_scan">停止扫描</string>
+    <string name="btn_disconnect">断开</string>
+
+    <string name="label_connection">连接：%1$s</string>
+    <string name="label_device_info">设备：%1$s</string>
+    <string name="label_stimulate">刺激：%1$s</string>
+
+    <string name="state_disconnected">未连接</string>
+    <string name="state_connected">已连接</string>
+    <string name="state_none">—</string>
+    <string name="state_unknown">未知</string>
+
+    <string name="label_scan_results">扫描结果</string>
+    <string name="tag_connected">已连接</string>
+
+    <string name="label_mode">模式</string>
+    <string name="mode_a">模式A</string>
+    <string name="mode_b">模式B</string>
+    <string name="mode_custom">自定义</string>
+
+    <!-- 输入框上方的标签写名称，框内的 hint 只写单位和范围。 -->
+    <string name="label_total_duration">总时长</string>
+    <string name="label_pulse_width">脉冲宽度</string>
+    <string name="label_pulse_frequency">脉冲频率</string>
+    <string name="label_pulse_start">开始时间</string>
+    <string name="label_pulse_end">关闭时间</string>
+    <string name="unit_seconds">s</string>
+
+    <string name="hint_duration">60-3600</string>
+    <string name="hint_pulse_width">us 100/150/200/250/300</string>
+    <string name="hint_pulse_frequency">Hz 1-120</string>
+    <string name="hint_pulse_start">s 1-3600</string>
+    <string name="hint_pulse_end">s 0-3600</string>
+    <string name="pulse_param_invalid">自定义脉冲参数要填正整数</string>
+    <string name="pulse_param_range">%1$s 要在 %2$d~%3$d 之间</string>
+    <!-- 脉宽不是区间是五个固定档位，单列一条提示，别用上面的区间措辞。 -->
+    <string name="pulse_width_unsupported">脉宽只支持 %1$s us</string>
+    <string name="duration_fixed">固定 %1$d 分钟</string>
+    <string name="duration_range">自定义时长要在 %1$d~%2$d 分钟之间</string>
+    <string name="label_strength">强度 %1$d</string>
+
+    <string name="btn_start">开始</string>
+    <!-- 暂停与恢复共用一个按钮，标签写的是「下一次点击会做什么」。 -->
+    <string name="btn_pause">暂停</string>
+    <string name="btn_resume">恢复</string>
+    <string name="btn_stop_stimulate">停止</string>
+    <string name="btn_query">查询</string>
+
+    <string name="btn_strength_down">减档</string>
+    <string name="btn_strength_up">加档</string>
+    <string name="strength_limit">强度已在 %1$d，调不动了</string>
+
+    <string name="label_log">日志</string>
+    <string name="btn_copy_log">复制日志</string>
+    <string name="log_empty">暂无日志可复制</string>
+    <string name="log_copied">已复制 %1$d 行日志</string>
+
+    <string name="info_battery">电量 %1$d%%</string>
+    <string name="info_free_space">剩余空间 %1$d</string>
+    <string name="info_charge_charging">充电中</string>
+    <string name="info_charge_idle">未充电</string>
+    <string name="info_wear_wearing">已佩戴</string>
+    <string name="info_wear_idle">未佩戴</string>
+    <string name="info_sending">命令在途</string>
+
+    <string name="stim_running">运行中</string>
+    <string name="stim_idle">未运行</string>
+    <string name="stim_suspended">已暂停</string>
+    <string name="stim_working_time">已运行 %1$d 秒</string>
+    <string name="stim_duration">时长 %1$d 秒</string>
+    <!-- 自定义模式回读的脉冲参数。设备没带这组字段时明确写出来，好和「带了但是 0」区分开。 -->
+    <string name="stim_pulse_params">脉冲 宽%1$dus 频%2$dHz 开%3$ds 关%4$ds</string>
+    <string name="stim_pulse_absent">脉冲 设备未上报</string>
+
+    <!-- 设备主动上报的刺激结束记录：%1$s 开始时间 %2$s 结束原因 %3$s 模式 %4$d 时长。
+         设备离线期间攒下的记录会一次全给，日志里逐条写一行。 -->
+    <string name="history_record">使用记录：%1$s %2$s %3$s %4$d 秒</string>
+    <string name="history_empty">使用记录：设备报了，但一条记录都没带</string>
+    <string name="finish_normal">正常结束</string>
+    <string name="finish_own">用户主动结束</string>
+    <string name="finish_new_stimulate">被新刺激打断</string>
+    <string name="finish_low_battery">低电量强制结束</string>
+    <string name="finish_other">强制结束（其他原因）</string>
+    <string name="finish_unknown">结束原因未知</string>
+</resources>
