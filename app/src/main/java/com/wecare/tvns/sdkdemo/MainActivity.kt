@@ -636,21 +636,6 @@ class MainActivity : AppCompatActivity(), TvnsSdkListener, TvnsScanListener {
         result.stimulusValue?.let { parts.add(getString(R.string.label_strength, it)) }
         result.workingTimeSeconds?.let { parts.add(getString(R.string.stim_working_time, it)) }
         result.durationSeconds?.let { parts.add(getString(R.string.stim_duration, it)) }
-        // 只有自定义模式才有回读的脉冲参数：A/B 是固定协议，设备本来就不带这组字段
-        // （Flutter 蓝本也只在 MT_CUSTOM 时取）。设备没带时写明「未上报」，好和全 0 区分开。
-        if (result.mode == PatternMode.CUSTOM) {
-            val pulse = result.customParameters
-            parts.add(
-                if (pulse == null) {
-                    getString(R.string.stim_pulse_absent)
-                } else {
-                    getString(
-                        R.string.stim_pulse_params, pulse.pulseWidth, pulse.pulseFrequency,
-                        pulse.pulseStartDuration, pulse.pulseEndDuration
-                    )
-                }
-            )
-        }
 
         // 代码改 progress 不会走 onStopTrackingTouch，所以这里不会反过来又发一条命令。
         result.stimulusValue?.let { ui.seekStrength.progress = it.coerceIn(0, ui.seekStrength.max) }

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">tVNS_SDK_Project</string>
+    <string name="app_name">tvns_sdk_demo</string>
 
     <string name="btn_scan">扫描</string>
     <string name="btn_stop_scan">停止扫描</string>
